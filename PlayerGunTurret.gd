@@ -1,6 +1,5 @@
 extends Sprite
 
-var speed = 400
 var angular_speed = PI
 
 const bullet = preload("res://Bullet.tscn")
@@ -10,16 +9,17 @@ var timePassed = 0
 func _process(delta):
 	
 	
-	if timePassed > 2 :
-		shootBullet()
-		timePassed = 0;
-	
-	rotation += angular_speed+delta
-	
-	var velocity = Vector2.UP.rotated(rotation) * speed
 
-	position += velocity * delta
 	
+	rotation += angular_speed*delta
+	
+		
+	
+	if timePassed > 2 :
+		shootBullet(rotation_degrees)
+		timePassed = 0;
+		
+
 	
 	timePassed += delta
 	
@@ -27,10 +27,26 @@ func _process(delta):
 	
 	
 	
-func shootBullet():
+func shootBullet(rotation):
 	print("ShootBulletCalled")
 	#Make instance
-	var GrabedInstance= bullet.instance()
-	#You could now make changes to the new instance if you wanted
+	var GrabedInstance = bullet.instance()
 	#Attach it to the tree
-	self.add_child(GrabedInstance)
+	get_parent().add_child(GrabedInstance)
+	#calculate Position of Gun Turret
+	var tipGun = get_node("TipGun")
+	var baseGun = get_node("BaseGun")
+	
+	var direction =  Vector2(0,0);
+	direction.x = cos(rotation)
+	direction.y = sin(rotation)
+	
+	var shootVector= tipGun.position - baseGun.position
+	print(shootVector)
+	
+	
+	var rigidBody = GrabedInstance.get_node("RigidBody2D")
+	GrabedInstance.add_force(direction*100,direction*100)
+
+
+	

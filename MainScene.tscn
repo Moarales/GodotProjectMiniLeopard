@@ -17,6 +17,11 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="PlayerTank"]
-rotation = -0.0356854
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
+
+[node name="TipGun" type="Node2D" parent="PlayerTank/Sprite"]
+position = Vector2( 0, -40 )
+
+[node name="BaseGun" type="Node2D" parent="PlayerTank/Sprite"]
+position = Vector2( 0, 30 )
