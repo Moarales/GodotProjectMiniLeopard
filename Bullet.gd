@@ -5,4 +5,4 @@ func _process(delta):
 	Input.get_gyroscope()
 	var gyroVector = Input.get_gyroscope()
 	var direction =  Vector2(gyroVector.y,gyroVector.x);
-	add_force(direction,direction*10)
+	add_force(direction,direction*50)
