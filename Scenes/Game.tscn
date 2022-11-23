@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Tank/march.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Tank/Kenney_topdownTanks/PNG/Environment/sand.png" type="Texture" id=2]
+[ext_resource path="res://Tank/GunTurret.png" type="Texture" id=3]
+[ext_resource path="res://Tank/Tank.png" type="Texture" id=4]
+[ext_resource path="res://Prefabs/EnemyTank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/WallScript.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/PlayerGunTurret.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/BackButton.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/TargetIndicator.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/PauseButton.gd" type="Script" id=10]
+[ext_resource path="res://Tank/Kenney_topdownTanks/PNG/Environment/grass.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29.5, 661 )
+
+[node name="MainScene" type="Label"]
+margin_left = 413.0
+margin_top = 255.0
+margin_right = 511.0
+margin_bottom = 269.0
+text = "Zang Unlimited"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -527.0
+margin_top = -341.0
+margin_right = 958.0
+margin_bottom = 513.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = -394.0
+margin_top = -229.0
+margin_right = -339.0
+margin_bottom = -177.0
+color = Color( 0.0156863, 0.72549, 0.00784314, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect4"]
+margin_left = 8.0
+margin_top = 23.0
+margin_right = 48.0
+margin_bottom = 34.0
+rect_rotation = 2.15358
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect4"]
+margin_left = 12.0
+margin_top = 27.0
+margin_right = 43.0
+margin_bottom = 36.0
+rect_rotation = 25.9882
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect4"]
+margin_left = 5.0
+margin_top = 28.0
+margin_right = 42.0
+margin_bottom = 37.0
+rect_rotation = -33.9703
+
+[node name="MenuButton" type="MenuButton" parent="ColorRect4"]
+margin_right = 55.0
+margin_bottom = 52.0
+rect_rotation = 0.392842
+script = ExtResource( 8 )
+
+[node name="PlayerTank" type="Sprite" parent="."]
+position = Vector2( -171, 40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="PlayerTank"]
+rotation = 1.5708
+texture = ExtResource( 3 )
+script = ExtResource( 7 )
+
+[node name="TipGun" type="Node2D" parent="PlayerTank/Sprite"]
+position = Vector2( 0, -40 )
+rotation = 0.00796225
+script = ExtResource( 9 )
+
+[node name="BaseGun" type="Node2D" parent="PlayerTank/Sprite"]
+position = Vector2( 0, 30 )
+
+[node name="EnemyTank4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 428, 212 )
+rotation = -0.754752
+
+[node name="EnemyTank5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 412, -64 )
+rotation = -1.06589
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Walls"]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D"]
+position = Vector2( 652, -33 )
+rotation = 1.56594
+shape = SubResource( 2 )
+
+[node name="Area2D4" type="Area2D" parent="Walls"]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D4"]
+position = Vector2( 653.002, 751.854 )
+rotation = 1.56594
+shape = SubResource( 2 )
+
+[node name="Area2D3" type="Area2D" parent="Walls"]
+position = Vector2( 896, 82 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D3"]
+position = Vector2( 439, 525.997 )
+shape = SubResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="Walls"]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D2"]
+position = Vector2( -29.5, 295 )
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 700.0
+margin_top = -222.0
+margin_right = 828.0
+margin_bottom = -94.0
+texture_normal = ExtResource( 11 )
+script = ExtResource( 10 )
+
+[connection signal="pressed" from="ColorRect4/MenuButton" to="ColorRect4/MenuButton" method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
