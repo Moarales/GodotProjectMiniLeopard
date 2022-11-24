@@ -96,6 +96,7 @@ position = Vector2( 895, 149 )
 rotation = -1.06589
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 713, 237 )
