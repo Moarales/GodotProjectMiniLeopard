@@ -35,7 +35,7 @@ func shootBullet(rotation):
 	direction.x = cos((rotation-90)*PI/180)
 	direction.y = sin((rotation-90)*PI/180)
 	
-	GrabedInstance.add_force(direction*100,direction*100)
+	GrabedInstance.add_force(direction*100,direction*1000)
 
 
 	

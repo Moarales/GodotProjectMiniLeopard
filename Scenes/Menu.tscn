@@ -8,26 +8,28 @@
 [ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=6]
 
 [node name="Menu" type="Label"]
-margin_left = 173.0
-margin_top = 102.0
-margin_right = 307.0
-margin_bottom = 174.0
+margin_left = 3.0
+margin_top = 12.0
+margin_right = 1295.0
+margin_bottom = 733.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -174.0
-margin_top = -99.0
-margin_right = 1110.0
-margin_bottom = 626.0
+margin_left = 1.0
+margin_top = -11.0
+margin_right = 1285.0
+margin_bottom = 714.0
 texture = ExtResource( 2 )
 stretch_mode = 2
 
 [node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 396.0
-margin_top = 181.0
-margin_right = 457.0
-margin_bottom = 237.0
+anchor_bottom = 0.5
+margin_left = -67.5
+margin_top = -64.0
+margin_right = 67.5
+margin_bottom = 64.0
 texture_normal = ExtResource( 2 )
 script = ExtResource( 6 )
 
@@ -44,6 +46,7 @@ margin_top = 5.0
 margin_right = 128.0
 margin_bottom = 19.0
 rect_rotation = 44.9745
+mouse_filter = 1
 
 [node name="ColorRect2" type="ColorRect" parent="TextureButton"]
 margin_left = 38.0
@@ -51,44 +54,45 @@ margin_top = 110.0
 margin_right = 120.0
 margin_bottom = 124.0
 rect_rotation = -45.4329
+mouse_filter = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 295.81
-margin_top = 486.184
-margin_right = 435.81
-margin_bottom = 505.184
+margin_left = 470.81
+margin_top = 574.184
+margin_right = 610.81
+margin_bottom = 593.184
 rect_rotation = 0.0978504
 rect_scale = Vector2( 3, 3 )
 text = "Project  Mini Leopard "
 
 [node name="EnemyTank4" parent="." instance=ExtResource( 5 )]
-position = Vector2( -36.5945, 424.592 )
+position = Vector2( 138.406, 512.592 )
 rotation = 0.819541
 
 [node name="EnemyTank5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 929.405, -20.408 )
+position = Vector2( 1104.41, 67.592 )
 rotation = 2.71602
 
 [node name="EnemyTank6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 805, 489 )
+position = Vector2( 980, 577 )
 rotation = 0.858618
 
 [node name="Tree" type="TextureRect" parent="."]
-margin_left = 252.81
-margin_top = 93.1841
-margin_right = 350.81
-margin_bottom = 200.184
+margin_left = 427.81
+margin_top = 181.184
+margin_right = 525.81
+margin_bottom = 288.184
 texture = ExtResource( 3 )
 
 [node name="Tree2" type="TextureRect" parent="."]
-margin_left = 737.815
-margin_top = 122.184
-margin_right = 824.815
-margin_bottom = 209.184
+margin_left = 912.815
+margin_top = 210.184
+margin_right = 999.815
+margin_bottom = 297.184
 texture = ExtResource( 1 )
 
 [connection signal="pressed" from="TextureButton/Button" to="TextureButton" method="_on_Button_pressed"]
