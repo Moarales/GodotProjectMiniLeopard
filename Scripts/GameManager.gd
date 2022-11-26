@@ -15,6 +15,5 @@ func _process(delta):
 	if enemyTanks.size() > 0:
 		return;
 		
-	$LevelWon.show = true;
+	$LevelWon.show();
 		
-	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tank/march.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Tank/Kenney_topdownTanks/PNG/Environment/sand.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Tank/Kenney_topdownTanks/PNG/Environment/grass.png" type="Texture" id=11]
 [ext_resource path="res://Tank/Kenney_topdownTanks/PNG/Environment/dirt.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/WonButton.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 94, 22 )
@@ -257,6 +258,7 @@ margin_top = -64.0
 margin_right = 64.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 11 )
+script = ExtResource( 14 )
 
 [node name="ColorRect" type="ColorRect" parent="LevelWon/PauseMenu/TextureButton"]
 margin_left = 27.8951
@@ -293,3 +295,4 @@ mouse_filter = 1
 [connection signal="pressed" from="ColorRect4/MenuButton" to="ColorRect4/MenuButton" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="PauseButton" to="PauseButton" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Pause/PauseMenu/TextureButton" to="PauseButton" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="LevelWon/PauseMenu/TextureButton" to="LevelWon/PauseMenu/TextureButton" method="_on_TextureButton_pressed"]
