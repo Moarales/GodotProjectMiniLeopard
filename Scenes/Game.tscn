@@ -84,9 +84,19 @@ texture = ExtResource( 3 )
 script = ExtResource( 7 )
 
 [node name="TipGun" type="Node2D" parent="PlayerTank/Sprite"]
-position = Vector2( 0, -40 )
+position = Vector2( 0, -50 )
 rotation = 0.00796225
 script = ExtResource( 9 )
+
+[node name="ColorRect" type="ColorRect" parent="PlayerTank/Sprite/TipGun"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
 
 [node name="BaseGun" type="Node2D" parent="PlayerTank/Sprite"]
 position = Vector2( 0, 30 )

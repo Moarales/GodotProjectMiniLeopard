@@ -24,18 +24,23 @@ func shootBullet(rotation):
 	print("ShootBulletCalled")
 	#Make instance
 	var GrabedInstance = bullet.instance()
+
 	#Attach it to the tree
 	get_parent().add_child(GrabedInstance)
 	#calculate Position of Gun Turret
-	var tipGun = get_node("TipGun")
+	var tipGun = $TipGun
 	var baseGun = get_node("BaseGun")
 	
 	var direction =  Vector2(0,0);
+	
+	#GrabedInstance.transform = tipGun.transform.origin;
 
 	direction.x = cos((rotation-90)*PI/180)
 	direction.y = sin((rotation-90)*PI/180)
 	
 	GrabedInstance.add_force(direction*100,direction*1000)
+	print(rotation)
+	GrabedInstance.rotation_degrees = rotation;
 
 
 	
