@@ -41,6 +41,8 @@ func shootBullet(rotation):
 	GrabedInstance.add_force(direction*100,direction*1000)
 	print(rotation)
 	GrabedInstance.rotation_degrees = rotation;
-
+	
+	
+	$SFX.play();
 
 	

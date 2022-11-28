@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tank_Assets/GunTurret.png" type="Texture" id=1]
 [ext_resource path="res://Tank_Assets/Tank.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/EnemyTank.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/TowerAnim.gd" type="Script" id=4]
+[ext_resource path="res://Tank_Assets/explosion.wav" type="AudioStream" id=5]
+[ext_resource path="res://Prefabs/Explosion.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 93, 95 )
@@ -12,6 +14,9 @@ extents = Vector2( 93, 95 )
 position = Vector2( 293, 215 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
+
+[node name="Explosion" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 2, -2 )
@@ -30,3 +35,8 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1, -1 )
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="animation_finished" from="Explosion" to="Area2D" method="_on_Explosion_animation_finished"]
