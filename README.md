@@ -12,4 +12,4 @@ Android SDK and Android Studio,
 Godot Version v3.5.1
 
 ## Which Sensors does it Use?
-It uses the Gyro Sensor and changes directions of Bullets according to the Sensor .
+It uses the Acceleration Sensor and changes directions of Bullets according to the Sensor .
