@@ -11,9 +11,11 @@ config_version=4
 [application]
 
 config/name="ProjectMiniLeopard"
+config/description="Greate Game, never done before, best in the world!  Work, Improvement Team! "
 run/main_scene="res://Scenes/Menu.tscn"
 boot_splash/image="res://AppIcons/LoadingScreen.png"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
+config/icon="res://AppIcons/Icon_new.png"
 
 [display]
 
