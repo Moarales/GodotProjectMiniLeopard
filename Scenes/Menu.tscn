@@ -67,7 +67,7 @@ margin_right = 610.81
 margin_bottom = 593.184
 rect_rotation = 0.0978504
 rect_scale = Vector2( 3, 3 )
-text = "Project  Mini Leopard "
+text = "Project Mini Leopard "
 
 [node name="EnemyTank4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 138.406, 512.592 )
