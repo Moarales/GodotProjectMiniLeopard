@@ -129,21 +129,6 @@ margin_top = -21.0
 margin_right = 95.0
 margin_bottom = 22.0
 
-[node name="BarrelRedSide" type="Sprite" parent="Area2D"]
-position = Vector2( -63.9974, -1.1532 )
-rotation = -1.5708
-texture = ExtResource( 16 )
-
-[node name="BarrelRedSide2" type="Sprite" parent="Area2D"]
-position = Vector2( -3.46405, -2 )
-rotation = -1.5708
-texture = ExtResource( 16 )
-
-[node name="BarrelRedSide3" type="Sprite" parent="Area2D"]
-position = Vector2( 60.5333, -0.846802 )
-rotation = -1.5708
-texture = ExtResource( 16 )
-
 [node name="Walls" type="Node" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Walls"]
@@ -355,6 +340,21 @@ margin_right = 133.895
 margin_bottom = 126.0
 rect_rotation = -45.4329
 mouse_filter = 1
+
+[node name="BarrelRedSide" type="Sprite" parent="."]
+position = Vector2( 682, 181 )
+rotation = -0.523598
+texture = ExtResource( 16 )
+
+[node name="BarrelRedSide2" type="Sprite" parent="."]
+position = Vector2( 713, 233 )
+rotation = -0.523598
+texture = ExtResource( 16 )
+
+[node name="BarrelRedSide3" type="Sprite" parent="."]
+position = Vector2( 744, 289 )
+rotation = -0.523598
+texture = ExtResource( 16 )
 
 [connection signal="pressed" from="MenuButton/MenuButton" to="MenuButton/MenuButton" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="PauseButton" to="PauseButton" method="_on_TextureButton_pressed"]

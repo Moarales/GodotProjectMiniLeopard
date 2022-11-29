@@ -9,4 +9,4 @@ extends Node2D
 	#update();
 	
 func _draw():
-	draw_line(get_parent().position,position*10, Color(255, 0, 0), 1)
+	draw_line(get_parent().position,position*10, Color(255, 0, 0), 8)
