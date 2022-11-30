@@ -179,7 +179,7 @@ texture_normal = ExtResource( 11 )
 script = ExtResource( 10 )
 
 [node name="BPause3" type="Sprite" parent="PauseButton"]
-position = Vector2( 68, 62 )
+position = Vector2( 69, 62 )
 texture = ExtResource( 17 )
 
 [node name="Pause" type="Popup" parent="."]
